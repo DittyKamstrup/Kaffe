@@ -32,5 +32,38 @@ namespace Kaffe.Tests
             //Assert
             Assert.AreEqual("Stærk", styrke);
         }
+
+        [TestMethod()]
+        public void TestKaffeListe()
+        {
+            //Arrange
+            var kaffeListe = new List<Imælk>();
+            var cortado = new Cortado();
+            var latte = new Latte();
+
+            //SortKaffe har ikke implementeret Imælk interface, derfor kan det ikke indsættes til List<Imælk>
+            //var sortKaffe = new SortKaffe();
+            //kaffeListe.Add(sortKaffe);
+
+            kaffeListe.Add(cortado);
+            kaffeListe.Add(latte);
+
+            //Act
+            int total = 0;
+
+            foreach (var kaffeItem in kaffeListe)
+            {
+                total += kaffeItem.mlMælk();
+
+                //if (kaffeItem is Cortado)
+                //{
+                //    var localCortado = kaffeItem as Cortado;
+                //}
+                //kaffeItem.mlMælk();
+            }
+
+            //Assert
+            Assert.AreEqual(145, total);
+        }
     }
 }

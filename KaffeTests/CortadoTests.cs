@@ -12,9 +12,14 @@ namespace Kaffe.Tests
     public class CortadoTests
     {
         [TestMethod()]
-        public void PrisTest()
+        public void PrisTestCortado()
         {
-            Assert.Fail();
+            //Arrange
+            var cortado = new Cortado();
+            //Act
+            int pris = cortado.Pris();
+            //Assert
+            Assert.AreEqual(25, pris);
         }
     }
 }
