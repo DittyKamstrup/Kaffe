@@ -24,7 +24,7 @@ namespace Kaffe.Tests
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
-        public void PrisTest()
+        public void PrisTest20()
         {
             //Arrange
             var sortKaffe = new SortKaffe(20);
