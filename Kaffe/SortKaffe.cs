@@ -10,7 +10,22 @@ namespace Kaffe
     {
         public override int Pris()
         {
-            return 20;
+            int prisMedRabat = 20 - Rabat;
+
+            if (prisMedRabat <= 0)
+                throw new ArgumentException("Du kan ikke give en rabat på 20 eller derover!");
+
+            return prisMedRabat;
+        }
+
+        public SortKaffe()
+        {
+        }
+
+        public SortKaffe(int rabat)
+            : base(rabat)
+        {
+
         }
     }
 }
